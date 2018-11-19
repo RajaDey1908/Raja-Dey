@@ -1,0 +1,24 @@
+{
+  "name": "node_auth_pass_jwt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "express-passport-logout": "^0.1.0",
+    "jsonwebtoken": "*",
+    "mongoose": "^5.3.12",
+    "morgan": "*",
+    "passport": "^0.3.2",
+    "passport-jwt": "*"
+  },
+  "author": "",
+  "license": "ISC"
+}
