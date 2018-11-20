@@ -27,4 +27,6 @@ module.exports = function (app, passport) {
 
     app.put('/student/update/:id', studentController.update);
 
+    app.put('/student/testupdate/:id', studentController.studentupdate);
+
 }

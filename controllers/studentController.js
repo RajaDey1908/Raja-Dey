@@ -63,3 +63,18 @@ module.exports.update = function (req, res, next) {
         }
     })
 };
+
+
+module.exports.studentupdate = function (req, res, next) {
+
+    const doc = {
+        name: req.body.name,
+        email: req.body.email,
+      };
+      Student.update({_id: req.params.id}, doc, function(err, raw) {
+        if (err) {
+          res.send(err);
+        }
+        res.send(raw);
+      });
+}
