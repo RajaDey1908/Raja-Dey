@@ -11,7 +11,7 @@ var studentSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        index: {unique: true, dropDups: true},
     },
     password: {
         type: String,
@@ -33,6 +33,11 @@ var studentSchema = mongoose.Schema({
 
 var Student = module.exports = mongoose.model('students', studentSchema);
 
+module.exports.getStudentById = function (id, cb) {
+    Student.findById(id, cb);
+
+}
+
 module.exports.createStudent = function (newStudent, cb) {
 
     bcrypt.genSalt(10, function (err, salt) {
@@ -45,7 +50,10 @@ module.exports.createStudent = function (newStudent, cb) {
 
 }
 
-module.exports.getStudentById = function (id, cb) {
+
+module.exports.findStudentById = function (id, cb) {
     Student.findById(id, cb);
 
 }
+
+

@@ -25,4 +25,6 @@ module.exports = function (app, passport) {
     /* for student portion */
     app.post('/student/signup', studentController.signup);
 
+    app.put('/student/update/:id', studentController.update);
+
 }
