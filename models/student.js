@@ -11,7 +11,10 @@ var studentSchema = mongoose.Schema({
     email: {
         type: String,
         required: true,
-        index: {unique: true, dropDups: true},
+        index: {
+            unique: true,
+            dropDups: true
+        },
     },
     password: {
         type: String,
@@ -55,5 +58,3 @@ module.exports.findStudentById = function (id, cb) {
     Student.findById(id, cb);
 
 }
-
-

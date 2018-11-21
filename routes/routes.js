@@ -23,10 +23,17 @@ module.exports = function (app, passport) {
     app.delete('/delete', userController.delete);
 
     /* for student portion */
-    app.post('/student/signup', studentController.signup);
+
+    app.post('/student', studentController.signup);
 
     app.put('/student/update/:id', studentController.update);
 
     app.put('/student/testupdate/:id', studentController.studentupdate);
+
+    app.get('/students', studentController.list);
+
+    app.get('/students/:id', studentController.listById);
+
+    app.delete('/student/:id', studentController.delete);
 
 }
