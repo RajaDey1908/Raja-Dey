@@ -7,6 +7,8 @@ var cors = require('cors');
 var passport = require('passport');
 var config = require('./config/database');
 var port = process.env.PORT || 3000
+ mongoose.set('useNewUrlParser',true);
+ mongoose.set('useCreateIndex',true);
 mongoose.connect(config.db);
 mongoose.Promise = global.Promise;
 require('./config/passport')(passport);
